@@ -10,13 +10,7 @@ def open_and_read_file(file_path):
     the file's contents as one string of text.
     """
 
- 
-
-    f = open(file_path)
-
-    text = f.read()
-    
-    return text
+    return open(file_path).read()
 
 
 def make_chains(text_string):
