@@ -28,7 +28,22 @@ def make_chains(text_string):
 
     chains = {}
 
-    # your code goes here
+    splitted_text = text_string.split()
+
+    for each_word in range(len(splitted_text) - 1):
+        bi_gram = (splitted_text[each_word], splitted_text[each_word + 1])
+        # next_word = splitted_text[each_word + 2]
+        chains[bi_gram] = []
+        
+        # for bi_gram, next_word in chains():
+
+
+        #     if bi_gram 
+        #         append the next word as value of bigram 
+    
+    # take first word and 2nd word and make a tuple 
+    # loop over each word to create bigrams
+    # bigrams become keys in the dictionary
 
     return chains
 
@@ -53,6 +68,7 @@ input_text = open_and_read_file(input_path)
 
 # Get a Markov chain
 chains = make_chains(input_text)
+print chains
 
 # Produce random text
 random_text = make_text(chains)
