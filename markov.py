@@ -30,20 +30,22 @@ def make_chains(text_string):
 
     splitted_text = text_string.split()
 
-    for each_word in range(len(splitted_text) - 1):
+    for each_word in range(len(splitted_text) - 2):
+        # Split text and added tuple keys to dictionary
         bi_gram = (splitted_text[each_word], splitted_text[each_word + 1])
-        # next_word = splitted_text[each_word + 2]
-        chains[bi_gram] = []
-        
-        # for bi_gram, next_word in chains():
 
+        if bi_gram not in chains:
+            # chains[bi_gram] = []
+            # next_word = splitted_text[each_word + 2]
+            # chains[bi_gram].append(next_word)
 
-        #     if bi_gram 
-        #         append the next word as value of bigram 
-    
-    # take first word and 2nd word and make a tuple 
-    # loop over each word to create bigrams
-    # bigrams become keys in the dictionary
+            chains[bi_gram] = [ splitted_text[each_word + 2] ]
+
+        else:
+            # next_word = splitted_text[each_word + 2]
+            # chains[bi_gram].append(next_word)
+
+            chains[bi_gram].append(splitted_text[each_word + 2])
 
     return chains
 
