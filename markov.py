@@ -27,7 +27,6 @@ def make_chains(text_string):
     """
 
     chains = {}
-
     splitted_text = text_string.split()
 
     for each_word in range(len(splitted_text) - 2):
@@ -38,13 +37,10 @@ def make_chains(text_string):
             # chains[bi_gram] = []
             # next_word = splitted_text[each_word + 2]
             # chains[bi_gram].append(next_word)
-
             chains[bi_gram] = [ splitted_text[each_word + 2] ]
-
         else:
             # next_word = splitted_text[each_word + 2]
             # chains[bi_gram].append(next_word)
-
             chains[bi_gram].append(splitted_text[each_word + 2])
 
     return chains
@@ -55,7 +51,8 @@ def make_text(chains):
 
     text = ""
 
-    # your code goes here
+    for bi_gram, new_word in chains:
+        new_key = ( bi_gram[1], new_word[rand(len(new_word))] )
 
     return text
 
