@@ -52,8 +52,8 @@ def make_text(chains):
     text = ""
 
     for bi_gram, new_word in chains:
-        new_key = ( bi_gram[1], new_word[rand(len(new_word))] )
-
+        new_key = ( bi_gram, choice(new_word) )
+        print new_key
     return text
 
 
